@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "8a8ea078-d211-4d1f-aece-01db8b348026",
+		"name": "lagardere-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "List all groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/group/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group detail (name)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/group/{{name}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"{{name}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"agroupname\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"agroupname2\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/group/{{name}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"{{name}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/group/{{name}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"{{name}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add user to group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"ausername\",\n\t\"groupname\": \"agroupname\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/group/useradd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"useradd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove user from group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"johnsmith\",\n\t\"groupname\": \"agroupname2\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/group/userrm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"userrm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/user/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User detail (username)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/user/{{username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"john.smith@example.com\",\n\t\"username\": \"ausername\",\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Smith\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"username_new\",\n\t\"firstName\": \"firstName_new\",\n\t\"lastName\": \"lastName_new\",\n\t\"email\": \"johnsmith2@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/user/{{username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/user/{{username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Obtain JWT Lexik",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c091b7e-daac-48eb-9dae-beec0fd4c269",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable('token', jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"user\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "{{url}}/api/login_check",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
